@@ -24,6 +24,9 @@ public class ProductEntity {
     @Column(name = "image")
     private String image;
 
+    @Column(name = "description")
+    private String description;
+
     @ManyToOne() //EAGER
     @JoinColumn(name = "categoryid", insertable = false, updatable = false)
     private CategoryEntity category;
@@ -89,6 +92,14 @@ public class ProductEntity {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public CategoryEntity getCategory() {

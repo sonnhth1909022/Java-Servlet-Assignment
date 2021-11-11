@@ -1,8 +1,6 @@
 package com.demo.servlet;
 
-import com.demo.dao.CategoryDao;
 import com.demo.dao.ProductDao;
-import com.demo.entity.CategoryEntity;
 import com.demo.entity.ProductEntity;
 
 import javax.servlet.ServletException;
@@ -13,21 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeProductServlet", urlPatterns = {"/homeproducts"})
-public class HomeProductServlet extends HttpServlet {
+@WebServlet(name = "HomeProductCateServlet", urlPatterns = {"/homeproductscate"})
+public class HomeProductCateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CategoryDao catedao = new CategoryDao();
-        List<CategoryEntity> categorys = catedao.getAllCategory();
-        request.setAttribute("categorys", categorys);
+        int id = Integer.parseInt(request.getParameter("id"));
+        ProductDao prodaobycate = new ProductDao();
+        List<ProductEntity> pc = prodaobycate.getLsProductByCategoryId(id);
 
-        ProductDao prodao = new ProductDao();
-        List<ProductEntity> products = prodao.getAllProduct();
-        request.setAttribute("products", products);
-
-        request.getRequestDispatcher("homeproduct.jsp").forward(request, response);
+        request.setAttribute("productscate", pc);
+        request.getRequestDispatcher("homeproductcate.jsp").forward(request, response);
     }
 }

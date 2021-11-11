@@ -62,9 +62,9 @@
             </div>
             <div class="col-md-8 col-sm-12">
                 <div id="filters" class="button-group">
-                    <button class="btn btn-primary" data-filter="*">All Products</button>
+                    <button onclick="window.location.href='homeproducts';" class="btn btn-primary">All Products</button>
                     <c:forEach var="c" items="${categorys}">
-                    <button class="btn btn-primary" data-filter=".new">${c.name}</button>
+                    <button onclick="window.location.href='homeproductscate?id=${c.id}';" class="btn btn-primary">${c.name}</button>
                     </c:forEach>
                 </div>
             </div>
@@ -77,7 +77,7 @@
     <div class="row posts">
         <c:forEach var="p" items="${products}">
             <div id="1" class="item new col-md-3">
-            <a href="#">
+            <a href="detail?id=${p.id}&cid=${p.categoryid}">
                 <div class="featured-item">
                     <img style="width: 220px;height: 251px" src="img/${p.image}" alt="">
                     <h4>${p.name}</h4>

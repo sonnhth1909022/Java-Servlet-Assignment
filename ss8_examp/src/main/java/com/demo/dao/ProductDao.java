@@ -5,6 +5,7 @@ import com.demo.entity.ProductEntity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.util.List;
 
 public class ProductDao {
@@ -26,5 +27,27 @@ public class ProductDao {
         em.persist(product);
         em.getTransaction().commit();
         em.close();
+    }
+
+    public ProductEntity getProductById(int id){
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        ProductEntity product = em.find(ProductEntity.class, id);
+        Query query = em.createQuery("select p from ProductEntity p where p.id = (:id)");
+        query.setParameter("id", id);
+        em.getTransaction().commit();
+        em.close();
+        return product;
+    }
+
+    public List<ProductEntity> getLsProductByCategoryId(int id) {
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createQuery("select p from ProductEntity p where p.categoryid = (:id)");
+        query.setParameter("id", id);
+        List<ProductEntity> lsProduct = query.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        return lsProduct;
     }
 }

@@ -83,7 +83,7 @@
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
                 <c:forEach var="p" items="${products}">
-                    <a href="#">
+                    <a href="detail?id=${p.id}&cid=${p.categoryid}">
                         <div class="featured-item">
                             <img style="width: 220px;height: 251px" src="img/${p.image}" alt="">
                             <h4>${p.name}</h4>
