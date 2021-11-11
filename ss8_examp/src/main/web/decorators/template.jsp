@@ -6,11 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <html>
 <head>
-    <title>Title</title>
+    <title><decorator:title/></title>
+    <jsp:include page="homehead.jsp" />
+    <decorator:head />
 </head>
 <body>
-
+<decorator:body />
+<jsp:include page="homefooter.jsp" />
+<jsp:include page="homejs.jsp" />
 </body>
 </html>

@@ -11,14 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet", urlPatterns = {"/home"})
+@WebServlet(name = "HomeServlet", urlPatterns={"/home"})
 public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        ProductDao dao = new ProductDao();
+        List<ProductEntity> products = dao.getAllProduct();
+        request.setAttribute("products", products);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
