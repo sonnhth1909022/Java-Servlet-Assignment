@@ -18,9 +18,7 @@ public class HomeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductDao dao = new ProductDao();
-        List<ProductEntity> products = dao.getAllProduct();
-        request.setAttribute("products", products);
+
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
