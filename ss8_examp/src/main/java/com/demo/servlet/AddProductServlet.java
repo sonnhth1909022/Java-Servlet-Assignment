@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 
-@WebServlet(name = "AddProductServlet", urlPatterns = {"/addproduct"})
+@WebServlet(name = "AddProductServlet", urlPatterns = {"/adminaddproduct"})
 public class AddProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");

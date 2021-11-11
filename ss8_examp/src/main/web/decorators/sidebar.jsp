@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Product -->
     <li class="nav-item active">
-        <a class="nav-link" href="products">
+        <a class="nav-link" href="adminproducts">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Product</span></a>
     </li>
@@ -24,7 +24,7 @@
 
     <!-- Nav Item - Category -->
     <li class="nav-item active">
-        <a class="nav-link" href="category">
+        <a class="nav-link" href="admincategory">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Category</span></a>
     </li>
