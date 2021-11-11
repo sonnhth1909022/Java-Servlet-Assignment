@@ -63,9 +63,9 @@
             <div class="col-md-8 col-sm-12">
                 <div id="filters" class="button-group">
                     <button class="btn btn-primary" data-filter="*">All Products</button>
-                    <button class="btn btn-primary" data-filter=".new">Newest</button>
-                    <button class="btn btn-primary" data-filter=".low">Low Price</button>
-                    <button class="btn btn-primary" data-filter=".high">Hight Price</button>
+                    <c:forEach var="c" items="${categorys}">
+                    <button class="btn btn-primary" data-filter=".new">${c.name}</button>
+                    </c:forEach>
                 </div>
             </div>
         </div>

@@ -1,6 +1,8 @@
 package com.demo.servlet;
 
+import com.demo.dao.CategoryDao;
 import com.demo.dao.ProductDao;
+import com.demo.entity.CategoryEntity;
 import com.demo.entity.ProductEntity;
 
 import javax.servlet.ServletException;
@@ -18,8 +20,11 @@ public class HomeProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductDao dao = new ProductDao();
-        List<ProductEntity> products = dao.getAllProduct();
+        CategoryDao dao = new CategoryDao();
+        List<CategoryEntity> categorys = dao.getAllCategory();
+        request.setAttribute("categorys", categorys);
+        ProductDao dao2 = new ProductDao();
+        List<ProductEntity> products = dao2.getAllProduct();
         request.setAttribute("products", products);
         request.getRequestDispatcher("homeproduct.jsp").forward(request, response);
     }
