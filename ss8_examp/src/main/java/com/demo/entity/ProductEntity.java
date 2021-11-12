@@ -43,13 +43,14 @@ public class ProductEntity {
         this.image = image;
     }
 
-    public ProductEntity( String name, int price, int quantity,  String image,int categoryid)  {
+    public ProductEntity( String name, int price, int quantity,  String image,int categoryid, String description)  {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
 
         this.image = image;
         this.categoryid = categoryid;
+        this.description = description;
     }
 
     public int getId() {

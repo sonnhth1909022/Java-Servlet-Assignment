@@ -41,8 +41,9 @@ public class CategoryDao {
     public void updateCategory(CategoryEntity categoryEntity){
         em = emf.createEntityManager();
         em.getTransaction().begin();
-        CategoryEntity cUpdate = em.find(CategoryEntity.class, categoryEntity.getId());
-        cUpdate.setName(categoryEntity.getName());
+      /*  CategoryEntity cUpdate = em.find(CategoryEntity.class, categoryEntity.getId());
+        cUpdate.setName(categoryEntity.getName());*/
+        em.merge(categoryEntity);
         em.getTransaction().commit();
         em.close();
     }

@@ -63,6 +63,10 @@
                                 </c:forEach>
                                 </select>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <input type="text" class="form-control" name="description" id="description">
+                                </div>
                                 <input type="submit" class="btn btn-primary" value="Save">
                             </form>
                         </div>

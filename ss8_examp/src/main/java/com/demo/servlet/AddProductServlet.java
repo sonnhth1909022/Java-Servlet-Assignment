@@ -35,9 +35,10 @@ public class AddProductServlet extends HttpServlet {
             filePart.write(saveFile+File.separator);
 
             int categoryid = Integer.parseInt(request.getParameter("category"));
+            String description = request.getParameter("description");
 
             ProductDao dao = new ProductDao();
-            ProductEntity product = new ProductEntity(name, price, quantity, fileName , categoryid);
+            ProductEntity product = new ProductEntity(name, price, quantity, fileName , categoryid, description);
             dao.insertProduct(product);
             response.sendRedirect("adminproducts");
         }catch (Exception e){

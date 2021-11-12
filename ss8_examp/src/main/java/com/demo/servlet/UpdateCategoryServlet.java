@@ -16,9 +16,8 @@ import java.io.IOException;
 public class UpdateCategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryDao dao = new CategoryDao();
-        CategoryEntity productEntity = new CategoryEntity();
         String name = request.getParameter("name");
-        productEntity.setName(name);
+        CategoryEntity productEntity =new CategoryEntity(name);
         dao.updateCategory(productEntity);
         response.sendRedirect("admincategory");
     }
