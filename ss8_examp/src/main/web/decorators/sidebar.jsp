@@ -32,13 +32,6 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Image -->
-    <li class="nav-item active">
-        <a class="nav-link" href="image">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Image</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 

@@ -40,6 +40,18 @@ public class ProductDao {
         em.getTransaction().commit();
         em.close();
     }
+
+    public  void deleteProduct(int id){
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        ProductEntity p = em.find(ProductEntity.class, id);
+        if (p != null) {
+            em.remove(p);
+        }
+        em.getTransaction().commit();
+        em.close();
+    }
+
     public  ProductEntity getProduct(int id) {
         em = emf.createEntityManager();
         em.getTransaction().begin();

@@ -66,9 +66,9 @@
                                             </td>
                                             <td>${p.category.name}</td>
                                             <td>
-                                                <a href="adminedit?id=${p.id}" class="btn btn-warning">Sửa</a>
+                                                <a href="admineditproduct?id=${p.id}" class="btn btn-warning">Sửa</a>
 
-                                                <a href="" class="btn btn-danger " id="xoa">Xóa</a>
+                                                <a href="admindeleteproduct?id=${p.id}" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?')">Xóa</a>
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -109,7 +109,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="login">Logout</a>
             </div>
         </div>
     </div>

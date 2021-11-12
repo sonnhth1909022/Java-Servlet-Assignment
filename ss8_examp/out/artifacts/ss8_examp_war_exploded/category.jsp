@@ -37,7 +37,8 @@
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        <%-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>--%>
+                        <a href="adminaddcategory" class="btn btn-success float-left">Add Category</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -46,12 +47,14 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Action</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
@@ -59,6 +62,11 @@
                                     <tr>
                                         <td>${c.id}</td>
                                         <td>${c.name}</td>
+                                        <td>
+                                            <a href="admineditcategory?id=${c.id}" class="btn btn-warning">Sửa</a>
+
+                                            <a href="admindeletecategory?id=${c.id}" class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?')">Xóa</a>
+                                        </td>
                                     </tr>
                                 </c:forEach>
 
@@ -99,7 +107,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="login">Logout</a>
             </div>
         </div>
     </div>

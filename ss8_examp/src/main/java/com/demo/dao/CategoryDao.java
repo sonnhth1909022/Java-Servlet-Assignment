@@ -20,4 +20,39 @@ public class CategoryDao {
         em.close();
         return listCategory;
     }
+
+    public void insertCategory(CategoryEntity category){
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(category);
+        em.getTransaction().commit();
+        em.close();
+    }
+    public  void deleteCategory(int id){
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        CategoryEntity p = em.find(CategoryEntity.class, id);
+        if (p != null) {
+            em.remove(p);
+        }
+        em.getTransaction().commit();
+        em.close();
+    }
+    public void updateCategory(CategoryEntity categoryEntity){
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        CategoryEntity cUpdate = em.find(CategoryEntity.class, categoryEntity.getId());
+        cUpdate.setName(categoryEntity.getName());
+        em.getTransaction().commit();
+        em.close();
+    }
+    public  CategoryEntity getCategory(int id) {
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        CategoryEntity cUpdate = em.find(CategoryEntity.class, id);
+        em.getTransaction().commit();
+
+        return cUpdate;
+    }
 }
