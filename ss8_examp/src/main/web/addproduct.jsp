@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Description</label>
-                                    <input type="text" class="form-control" name="description" id="description">
+                                    <textarea class="form-control" name="description" id="description"></textarea>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Save">
                             </form>
