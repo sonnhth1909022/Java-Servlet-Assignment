@@ -37,10 +37,12 @@
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                       <%-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>--%>
+                        <a href="adminaddproduct" class="btn btn-success float-left">Add Product</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
@@ -50,18 +52,9 @@
                                     <th>Quantity</th>
                                     <th>Image</th>
                                     <th>Category</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
-                                <tfoot>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Image</th>
-                                    <th>Category</th>
-                                </tr>
-                                </tfoot>
                                 <tbody>
                                     <c:forEach var="p" items="${products}">
                                         <tr>
@@ -69,8 +62,14 @@
                                             <td>${p.name}</td>
                                             <td>${p.price}</td>
                                             <td>${p.quantity}</td>
-                                            <td><img style="width: 100px; height: 100px" src="img/${p.image}"></td>
+                                            <td><img style="width: 100px; height: 100px" src="img/${p.image}">
+                                            </td>
                                             <td>${p.category.name}</td>
+                                            <td>
+                                                <a href="adminedit?id=${p.id}" class="btn btn-warning">Sửa</a>
+
+                                                <a href="" class="btn btn-danger " id="xoa">Xóa</a>
+                                            </td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

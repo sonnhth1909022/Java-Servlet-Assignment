@@ -28,6 +28,27 @@ public class ProductDao {
         em.getTransaction().commit();
         em.close();
     }
+    public void updateProduct(ProductEntity product){
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        ProductEntity pUpdate = em.find(ProductEntity.class, product.getId());
+        pUpdate.setName(product.getName());
+        pUpdate.setPrice(product.getPrice());
+        pUpdate.setQuantity(product.getQuantity());
+        pUpdate.setCategoryid(product.getCategoryid());
+        pUpdate.setImage(product.getImage());
+        em.getTransaction().commit();
+        em.close();
+    }
+    public  ProductEntity getProduct(int id) {
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        ProductEntity pUpdate = em.find(ProductEntity.class, id);
+        em.getTransaction().commit();
+
+        return pUpdate;
+    }
 
     public ProductEntity getProductById(int id){
         em = emf.createEntityManager();
